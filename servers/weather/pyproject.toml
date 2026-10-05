@@ -1,0 +1,29 @@
+[project]
+name = "weather-mcp"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "srivatsanmura", email = "m.srivatsan@gmail.com" }
+]
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "mcp[cli]>=2.2.0",
+    "pydantic>=2.13.5",
+    "webclients",
+]
+
+[build-system]
+requires = ["uv_build>=0.12.15,<0.13.0"]
+build-backend = "uv_build"
+
+[tool.uv.build-backend]
+module-name = "weather_mcp"
+
+[tool.uv.sources]
+webclients = { git = "https://github.com/srivatsanmura/mcp-webclients.git", rev = "v0.1.0" }
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+]
